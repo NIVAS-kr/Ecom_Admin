@@ -1,16 +1,19 @@
-import { useState } from 'react'
-import './App.css'
+// src/App.js
+import { Routes, Route, Navigate } from "react-router-dom";
+import "./App.css";
+import Login from "./pages/Login"; 
 
 function App() {
+  const user = false; 
 
   return (
-    <>
-      <h1>MedjeeX Ecommerce Admin</h1>
-      {/* NAVBAR */}
-      {/* SEARCHBAR */}
-      {/* PRODUCTS LIST */}
-    </>
-  )
+    <div>
+   <Routes>
+      <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
+      
+    </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
